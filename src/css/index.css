@@ -1,0 +1,26 @@
+* {
+  font-family: Roboto;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+body {
+  background: linear-gradient(315deg, transparent 75%, #85e650 0) -10px 0,
+    linear-gradient(45deg, transparent 75%, #85e650 0) -10px 0,
+    linear-gradient(135deg, #67b33e 50%, transparent 0) 0 0,
+    linear-gradient(45deg, #3b6624 50%, #4f6642 0) 0 0 #4f6642;
+  background-size: 20px 20px;
+}
+
+#root {
+  margin: 0em;
+  padding: 0em;
+  border: 0em;
+  width: 100%;
+  height: 100vh;
+}
