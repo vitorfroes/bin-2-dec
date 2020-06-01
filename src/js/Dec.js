@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Dec() {
+export default function Dec(props) {
   const classes = useStyles();
 
   return (
@@ -41,6 +41,7 @@ export default function Dec() {
             InputProps={{
               readOnly: true,
             }}
+            value={props.decNumber}
           ></TextField>
         </CardContent>
       </Card>
