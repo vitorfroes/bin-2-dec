@@ -22,25 +22,26 @@ export default function App() {
   const [decNumber, setDec] = useState("");
   const [error, setError] = useState(false);
 
-  const isValid = () => {
-    const isBinary = (binNumber) =>
-      !String(binNumber).includes("2") &&
-      !String(binNumber).includes("3") &&
-      !String(binNumber).includes("4") &&
-      !String(binNumber).includes("5") &&
-      !String(binNumber).includes("6") &&
-      !String(binNumber).includes("7") &&
-      !String(binNumber).includes("8") &&
-      !String(binNumber).includes("9") &&
-      !String(binNumber).includes("e");
+  const isValid = (bin) => {
+    const isBinary = () => {
+      let ret = true;
 
-    if (!isBinary()) {
-      console.log("NOT binary");
+      if (bin && bin.length > 0) {
+        for (let index = 0; index < bin.length; index++) {
+          if (bin.charAt(index) !== "1" && bin.charAt(index) !== "0") {
+            ret = false;
+            break;
+          }
+        }
+      }
 
-      setError(true);
-    }
+      return ret;
+    };
+    const binary = isBinary();
 
-    return error === "";
+    setError(!binary);
+
+    return error;
   };
 
   const handleClear = () => {
@@ -57,7 +58,7 @@ export default function App() {
   };
 
   const handleChange = (event) => {
-    //isValid();
+    isValid(event.target.value);
 
     setBin(event.target.value);
   };
