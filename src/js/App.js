@@ -52,8 +52,6 @@ export default function App() {
   const handleConvert = () => {
     const dec = convert(binNumber);
 
-    console.log(dec);
-
     setDec(dec);
   };
 
