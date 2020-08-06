@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Header from "./Header";
 import ActionButtons from "./ActionButtons";
 import convert from "../utils/convert";
+import isBinary from "../utils/binary";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -23,21 +24,7 @@ export default function App() {
   const [error, setError] = useState(false);
 
   const isValid = (bin) => {
-    const isBinary = () => {
-      let ret = true;
-
-      if (bin && bin.length > 0) {
-        for (let index = 0; index < bin.length; index++) {
-          if (bin.charAt(index) !== "1" && bin.charAt(index) !== "0") {
-            ret = false;
-            break;
-          }
-        }
-      }
-
-      return ret;
-    };
-    const binary = isBinary();
+    const binary = isBinary(bin);
 
     setError(!binary);
 
